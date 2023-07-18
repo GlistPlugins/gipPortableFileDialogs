@@ -15,13 +15,9 @@ gipPortableFileDialogs::~gipPortableFileDialogs() {
 }
 
 void gipPortableFileDialogs::setup() {
-	
-		test_api();
-	    test_notify();
-	    test_message();
-	    test_select_folder();
-	    test_open_file();
-	    test_save_file();
+
+
+
 
 	   if (!pfd::settings::available())
 	    {
@@ -35,14 +31,14 @@ void gipPortableFileDialogs::setup() {
 
 }
 
-void gipPortableFileDialogs::test_notify() {
+void gipPortableFileDialogs::notify() {
     pfd::notify("Important Notification",
                 "This is ' a message, pay \" attention \\ to it!",
                 pfd::icon::info);
 
 }
 
-void gipPortableFileDialogs::test_message() {
+void gipPortableFileDialogs::message() {
     auto m = pfd::message("Personal Message",
                           "You are an amazing person, don't do that let anyone make you think otherwise.",
                           pfd::choice::yes_no_cancel,
@@ -62,12 +58,12 @@ void gipPortableFileDialogs::test_message() {
     }
 }
 
-void gipPortableFileDialogs::test_select_folder() {
+void gipPortableFileDialogs::select_folder() {
     auto dir = pfd::select_folder("Select any directory", pfd::path::home()).result();
     gLogi() << "Selected dir: " << dir ;
 }
 
-void gipPortableFileDialogs::test_open_file() {
+void gipPortableFileDialogs::open_file() {
     auto f = pfd::open_file("Choose files to read", pfd::path::home(),
                             { "Text Files (.txt .text)", "*.txt *.text",
                               "All Files", "*" },
@@ -78,7 +74,7 @@ void gipPortableFileDialogs::test_open_file() {
     gLogi() << " ";
 }
 
-void gipPortableFileDialogs::test_save_file() {
+void gipPortableFileDialogs::save_file() {
     auto f = pfd::save_file("Choose file to save",
                             pfd::path::home() + pfd::path::separator() + "readme.txt",
                             { "Text Files (.txt .text)", "*.txt *.text" },
@@ -86,7 +82,7 @@ void gipPortableFileDialogs::test_save_file() {
     gLogi() << "Selected file: " << f.result();
 }
 
-void gipPortableFileDialogs::test_api()
+void gipPortableFileDialogs::api()
 {
     // pfd::settings
     pfd::settings::verbose(true);

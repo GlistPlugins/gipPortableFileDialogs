@@ -19,12 +19,12 @@ public:
 
 	void setup();
 
-	void test_notify();
-	void test_message();
-	void test_select_folder();
-	void test_open_file();
-	void test_save_file();
-	void test_api();
+	void notify();
+	void message();
+	void select_folder();
+	void open_file();
+	void save_file();
+	void api();
 };
 
 #endif /* SRC_GIPPORTABLEFILEDIALOGS_H_ */
