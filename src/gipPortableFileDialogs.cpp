@@ -16,19 +16,13 @@ gipPortableFileDialogs::~gipPortableFileDialogs() {
 
 void gipPortableFileDialogs::setup() {
 
-
-
-
 	   if (!pfd::settings::available())
 	    {
 	        gLogi() << "Portable File Dialogs are not available on this platform. ";
-
 	    }
 
 	    // Set verbosity to true
 	    pfd::settings::verbose(true);
-
-
 }
 
 void gipPortableFileDialogs::notify() {
@@ -58,12 +52,12 @@ void gipPortableFileDialogs::message() {
     }
 }
 
-void gipPortableFileDialogs::select_folder() {
+void gipPortableFileDialogs::selectFolder() {
     auto dir = pfd::select_folder("Select any directory", pfd::path::home()).result();
     gLogi() << "Selected dir: " << dir ;
 }
 
-void gipPortableFileDialogs::open_file() {
+void gipPortableFileDialogs::openFile() {
     auto f = pfd::open_file("Choose files to read", pfd::path::home(),
                             { "Text Files (.txt .text)", "*.txt *.text",
                               "All Files", "*" },
@@ -74,7 +68,7 @@ void gipPortableFileDialogs::open_file() {
     gLogi() << " ";
 }
 
-void gipPortableFileDialogs::save_file() {
+void gipPortableFileDialogs::saveFile() {
     auto f = pfd::save_file("Choose file to save",
                             pfd::path::home() + pfd::path::separator() + "readme.txt",
                             { "Text Files (.txt .text)", "*.txt *.text" },
@@ -82,8 +76,7 @@ void gipPortableFileDialogs::save_file() {
     gLogi() << "Selected file: " << f.result();
 }
 
-void gipPortableFileDialogs::api()
-{
+void gipPortableFileDialogs::api() {
     // pfd::settings
     pfd::settings::verbose(true);
     pfd::settings::rescan();
