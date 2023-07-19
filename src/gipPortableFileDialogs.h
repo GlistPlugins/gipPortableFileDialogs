@@ -21,9 +21,9 @@ public:
 
 	void notify();
 	void message();
-	void select_folder();
-	void open_file();
-	void save_file();
+	void selectFolder();
+	void openFile();
+	void saveFile();
 	void api();
 };
 
