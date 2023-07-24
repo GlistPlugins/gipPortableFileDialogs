@@ -19,8 +19,8 @@ public:
 
 	void setup();
 
-	void notify();
-	void message();
+	void notify(std::string title, std::string message);
+	void messagetext(std::string title, std::string text);
 	void selectFolder();
 	void openFile();
 	void saveFile();
