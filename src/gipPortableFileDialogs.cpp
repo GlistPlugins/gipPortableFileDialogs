@@ -25,16 +25,15 @@ void gipPortableFileDialogs::setup() {
 	    pfd::settings::verbose(true);
 }
 
-void gipPortableFileDialogs::notify() {
-    pfd::notify("Important Notification",
-                "This is ' a message, pay \" attention \\ to it!",
+void gipPortableFileDialogs::notify(std::string title, std::string message) {
+    pfd::notify(title,
+                message,
                 pfd::icon::info);
-
 }
 
-void gipPortableFileDialogs::message() {
-    auto m = pfd::message("Personal Message",
-                          "You are an amazing person, don't do that let anyone make you think otherwise.",
+void gipPortableFileDialogs::messagetext(std::string title, std::string text) {
+    auto m = pfd::message(title,
+    						text,
                           pfd::choice::yes_no_cancel,
                           pfd::icon::warning);
 
